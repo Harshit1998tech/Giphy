@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:drawableEnd="@drawable/ic_baseline_search_24"
-        android:hint="Search here"
-        android:paddingLeft="10dp"
-        android:elevation="5dp"
-        android:background="@drawable/search_background"
-        android:paddingRight="10dp"/>
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchview"
+            android:iconifiedByDefault="false"
+            android:layout_marginHorizontal="2dp"
+            android:queryBackground="@android:color/transparent"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="2dp"
+            android:queryHint="Search Gif"
+            android:background="@drawable/search_background" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:background="#D1D1D1"
+            app:tabMode="fixed"
+            app:tabTextColor="@color/black"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabLayout"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/relist"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_layout"/>
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewPager"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/relist"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_layout"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:id="@+id/Progress_bar"/>
+
 
 </LinearLayout>
