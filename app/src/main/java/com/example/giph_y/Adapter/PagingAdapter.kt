@@ -17,7 +17,7 @@ import com.example.giph_y.ui.Gif
 
 
 class PagingAdapter(private val context: Context, private val data: List<Data>) :
-    PagingDataAdapter<Gif, PagingAdapter.PagingViewHolder>(MovieComparator){
+    PagingDataAdapter<Gif, PagingAdapter.PagingViewHolder>(GifComparator){
 
     override fun onBindViewHolder(holder: PagingViewHolder, position: Int) {
         val gif = data[position]
@@ -41,7 +41,7 @@ class PagingAdapter(private val context: Context, private val data: List<Data>) 
         var textView = itemView.findViewById<TextView>(R.id.textView)
     }
 
-    object MovieComparator : DiffUtil.ItemCallback<Gif>() {
+    object GifComparator : DiffUtil.ItemCallback<Gif>() {
         override fun areItemsTheSame(oldItem: Gif, newItem: Gif): Boolean {
             return oldItem.data == newItem.data
         }
